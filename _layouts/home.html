@@ -34,10 +34,18 @@ articles:
 ---
 <div class="layout--home">
   {%- include paginator.html -%}
-  {%- include extensions/netease-cloud-music.html id='18827568' -%}
 </div>
 <script>
   {%- include scripts/home.js -%}
+  document.addEventListener('visibilitychange', function() {
+  	if (document.visibilityState == 'hidden') {
+  		normal_title = document.title;
+  		document.title = 'f∑(っ°Д°;)っ卧槽，不见了';
+  	} else {
+  		document.title = +normal_title;
+  	}
+  });
 </script>
+
 
 {{ content }}
