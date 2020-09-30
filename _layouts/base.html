@@ -7,7 +7,7 @@ layout: none
   <head>
     {%- include analytics.html -%}
     {%- include head.html -%}
-    <script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
       {%- include scripts/utils/utils.js -%}
       {%- include scripts/lib/throttle.js -%}
       {%- include scripts/lib/lazyload.js -%}
@@ -16,7 +16,7 @@ layout: none
           normal_title = document.title;
           document.title = '哦豁，不见了';
         } else {
-          document.title = +normal_title;
+          document.title = normal_title;
         }
       });
     </script>
