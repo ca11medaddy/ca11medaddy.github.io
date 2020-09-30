@@ -11,6 +11,14 @@ layout: none
       {%- include scripts/utils/utils.js -%}
       {%- include scripts/lib/throttle.js -%}
       {%- include scripts/lib/lazyload.js -%}
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState == 'hidden') {
+          normal_title = document.title;
+          document.title = '哦豁，不见了';
+        } else {
+          document.title = +normal_title;
+        }
+      });
     </script>
     {%- include scripts/variables.html -%}
   </head>
