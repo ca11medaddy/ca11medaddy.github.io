@@ -7,18 +7,17 @@ layout: none
   <head>
     {%- include analytics.html -%}
     {%- include head.html -%}
-    <script>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/canvas-nest.js/1.0.0/canvas-nest.min.js">
       {%- include scripts/utils/utils.js -%}
       {%- include scripts/lib/throttle.js -%}
       {%- include scripts/lib/lazyload.js -%}
       document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState == 'hidden') {
-          normal_title = document.title;
-          document.title = '哦豁，不见了';
-        } else {
-          document.title = normal_title;
-        }
-      });
+	       if (document.visibilityState == 'hidden') {
+		         normal_title = document.title;
+		         document.title = '哦豁，不见了';
+	       } else {
+		         document.title = normal_title;
+	         }});
     </script>
     {%- include scripts/variables.html -%}
   </head>
