@@ -2,15 +2,16 @@
 layout: page
 type: article
 ---
-{%- include snippets/assign.html
-  target = site.data.variables.default.page.sharing
-  source0=layout.sharing source1=page.sharing -%}
-{%- assign _sharing = __return -%}
 
 <!-- 在正文开头添加网易云音乐插件 -->
 {% if page.music-id %}
   {% include cloud-music.html %}
 {% endif %}
+
+{%- include snippets/assign.html
+  target = site.data.variables.default.page.sharing
+  source0=layout.sharing source1=page.sharing -%}
+{%- assign _sharing = __return -%}
 
 <div class="layout--article">
   {%- include article/top/custom.html -%}
